@@ -49,6 +49,6 @@ Load a custom birdlist and convert it to BirdNET species list format
   file_path <- system.file("extdata", "input_birdlist.csv", package = "bntools")
   # Use the function to read the CSV
 missing_table <- make_bn_speclist(ebird_file = file_path,
-output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = T)
+output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = TRUE)
 
 }

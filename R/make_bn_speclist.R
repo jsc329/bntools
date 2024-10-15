@@ -14,6 +14,7 @@
 #'
 #' @return A table of birds that did not match the master BirdNET species list
 #' @export
+#' @importFrom utils read.csv read.table
 #'
 #' @examples
 #'   # Create a temporary file

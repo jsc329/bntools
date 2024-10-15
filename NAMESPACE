@@ -2,3 +2,5 @@
 
 export(get_eblist)
 export(make_bn_speclist)
+importFrom(utils,read.csv)
+importFrom(utils,read.table)

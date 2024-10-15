@@ -4,9 +4,11 @@
 #' @param hotspot_id the ID number given by eBird to a given hotspot or region
 #' @param out_name the middle portion of the output filename, see example
 #' @param out_dir the location where your list will export to. Defaults to current working directory
+#' @param test_run TRUE if you don't want to immediately write a csv out, FALSE for write out csv
 #'
 #' @return Nothing, only an exported CSV
 #' @export
+#' @importFrom utils read.csv
 #'
 #' @examples
 #' # Export the species list from Surprise Canyon, CA

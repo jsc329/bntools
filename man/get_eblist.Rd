@@ -12,6 +12,8 @@ get_eblist(hotspot_id, out_name = hotspot_id, out_dir = getwd(), test_run = F)
 \item{out_name}{the middle portion of the output filename, see example}
 
 \item{out_dir}{the location where your list will export to. Defaults to current working directory}
+
+\item{test_run}{TRUE if you don't want to immediately write a csv out, FALSE for write out csv}
 }
 \value{
 Nothing, only an exported CSV
