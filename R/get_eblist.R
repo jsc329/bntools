@@ -12,8 +12,10 @@
 #' # Export the species list from Surprise Canyon, CA
 #' # URL for this hotspot is here: https://ebird.org/hotspot/L11704882
 #' # use the bit after the last /
-#' get_eblist("L11704882")
-get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd()){
+#' # I set test run here to be true so that a csv isn't written out
+#' # change this to F when you want to use this function
+#' get_eblist("L11704882", test_run = TRUE)
+get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd(), test_run = F){
 
   # Download the printable page for
   # an ebird hotspot or other division
@@ -36,8 +38,15 @@ get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd()){
 
   setwd(out_dir)
 
+  # Check if this is
+  # a test run and stop it from
+  # writing out
+
+  if (!test_run){
+
   utils::write.csv(hot_specs,
             paste0("hotspot_species_",
                    hotspot_id,
                    ".csv"), row.names = F)
+  }
 }

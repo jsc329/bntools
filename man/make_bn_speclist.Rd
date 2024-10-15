@@ -46,19 +46,9 @@ Load a custom birdlist and convert it to BirdNET species list format
 }
 \examples{
   # Create a temporary file
-  temp_file <- tempfile(fileext = ".csv")
-
-  # Create some example data to write to the CSV
-  # that represents a supplied birdlist
-  test_data <- data.frame(
-  COMMONNAME = c("Common Raven", "Wrentit", "Bewick's Wren"))
-
-  # Write the test data to the temporary CSV file
-  write.csv(test_data, temp_file, row.names = FALSE)
-
+  file_path <- system.file("extdata", "input_birdlist.csv", package = "bntools")
   # Use the function to read the CSV
-missing_table <- make_bn_speclist(ebird_file = "test_data.csv",
-output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
-unlink(test_data)
+missing_table <- make_bn_speclist(ebird_file = file_path,
+output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = T)
 
 }

@@ -4,7 +4,7 @@
 \alias{get_eblist}
 \title{Scrape eBird species from hotspot}
 \usage{
-get_eblist(hotspot_id, out_name = hotspot_id, out_dir = getwd())
+get_eblist(hotspot_id, out_name = hotspot_id, out_dir = getwd(), test_run = F)
 }
 \arguments{
 \item{hotspot_id}{the ID number given by eBird to a given hotspot or region}
@@ -23,5 +23,7 @@ Scrape eBird species from hotspot
 # Export the species list from Surprise Canyon, CA
 # URL for this hotspot is here: https://ebird.org/hotspot/L11704882
 # use the bit after the last /
-get_eblist("L11704882")
+# I set test run here to be true so that a csv isn't written out
+# change this to F when you want to use this function
+get_eblist("L11704882", test_run = TRUE)
 }

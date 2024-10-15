@@ -1,3 +1,4 @@
 ^bntools\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+^data-raw$
