@@ -20,7 +20,7 @@
 #'   file_path <- system.file("extdata", "input_birdlist.csv", package = "bntools")
 #'   # Use the function to read the CSV
 #' missing_table <- make_bn_speclist(ebird_file = file_path,
-#' output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = T)
+#' output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = TRUE)
 #'
 make_bn_speclist <- function(ebird_file, bn_version = "2.4", output_file, name_col = NULL, sci_col = NULL, del_ebird_file = F, ebird_dir = getwd(), out_dir = getwd(),
                              test_run = F, add_species = NULL){
