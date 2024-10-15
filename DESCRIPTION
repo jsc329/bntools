@@ -1,15 +1,16 @@
 Package: bntools
-Title: What the Package Does (One Line, Title Case)
+Title: Provides tools for working with BirdNET
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Jerry", "Cole", , "jcole@birdpop.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-6483-9599"))
+Description: This package is intended to provide people with tools to make analysis of data in BirdNET easier. Including pulling bird lists from eBird hotspots, and converting those lists into a form that BirdNET can use to filter its output.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1.0)
 LazyData: true
+Imports:
+    utils

@@ -1,4 +1,22 @@
 
+#' Load a custom birdlist and convert it to BirdNET species list format
+#'
+#' @param ebird_file The custom file you want to read in, must have COMMONNAME or SCINAME column
+#' @param bn_version The version of BirdNET you plan to use, "2.1", "2.2", "2.4"
+#' @param output_file The name of your output file, must end in ".txt"
+#' @param name_col Specify the name of your column that holds common names or choose SCINAME
+#' @param sci_col Specifiy the name of your column that holds scientific names or chose COMMONAME
+#' @param del_ebird_file Set to TRUE if you want to delete your source species list on completion
+#' @param ebird_dir The directory your ebird list is comiing from, defaults to current dir
+#' @param out_dir The directory your BirdNET output will be written to, defaults to current dir
+#' @param test_run Set to TRUE if you do not want an output file
+#' @param add_species Supply a list of bird names that are missing from your custom list
+#'
+#' @return A table of birds that did not match the master BirdNET species list
+#' @export
+#'
+#' @examples
+#' missing_table <- make_bn_speclist(ebird_file = "ebird_list.csv", output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
 make_bn_speclist <- function(ebird_file, bn_version = "2.4", output_file, name_col = NULL, sci_col = NULL, del_ebird_file = F, ebird_dir = getwd(), out_dir = getwd(),
                              test_run = F, add_species = NULL){
 
