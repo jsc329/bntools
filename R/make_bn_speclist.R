@@ -16,7 +16,22 @@
 #' @export
 #'
 #' @examples
-#' missing_table <- make_bn_speclist(ebird_file = "ebird_list.csv", output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
+#'   # Create a temporary file
+#'   temp_file <- tempfile(fileext = ".csv")
+#'
+#'   # Create some example data to write to the CSV
+#'   # that represents a supplied birdlist
+#'   test_data <- data.frame(
+#'   COMMONNAME = c("Common Raven", "Wrentit", "Bewick's Wren"))
+#'
+#'   # Write the test data to the temporary CSV file
+#'   write.csv(test_data, temp_file, row.names = FALSE)
+#'
+#'   # Use the function to read the CSV
+#' missing_table <- make_bn_speclist(ebird_file = "test_data.csv",
+#' output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
+#' unlink(test_data)
+#'
 make_bn_speclist <- function(ebird_file, bn_version = "2.4", output_file, name_col = NULL, sci_col = NULL, del_ebird_file = F, ebird_dir = getwd(), out_dir = getwd(),
                              test_run = F, add_species = NULL){
 
