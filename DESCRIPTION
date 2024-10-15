@@ -13,4 +13,6 @@ Depends:
     R (>= 4.1.0)
 LazyData: true
 Imports:
+    rvest,
+    stringr,
     utils
