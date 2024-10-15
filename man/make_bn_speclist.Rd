@@ -45,5 +45,20 @@ A table of birds that did not match the master BirdNET species list
 Load a custom birdlist and convert it to BirdNET species list format
 }
 \examples{
-missing_table <- make_bn_speclist(ebird_file = "ebird_list.csv", output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
+  # Create a temporary file
+  temp_file <- tempfile(fileext = ".csv")
+
+  # Create some example data to write to the CSV
+  # that represents a supplied birdlist
+  test_data <- data.frame(
+  COMMONNAME = c("Common Raven", "Wrentit", "Bewick's Wren"))
+
+  # Write the test data to the temporary CSV file
+  write.csv(test_data, temp_file, row.names = FALSE)
+
+  # Use the function to read the CSV
+missing_table <- make_bn_speclist(ebird_file = "test_data.csv",
+output = "birdnet_list.csv", name_col = "COMMONNAME", test_run = T)
+unlink(test_data)
+
 }
