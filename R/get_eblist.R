@@ -1,7 +1,7 @@
 
 #' Scrape eBird species from hotspot
 #'
-#' @param hotspot_id the ID number given by eBird to a given hotspot or region
+#' @param hotspot_id the ID number given by eBird to a given hotspot or region. You can provide multiple region codes at once by passing a vector of strings, such as hotspot_id = c("L11704882", "US-CA-051").
 #' @param out_name the middle portion of the output filename. The filename will always be of the form "hotspot_species_out_name.csv", where "out_name" is replaced with whatever string is passed to the out_name argument. Defaults to the supplied hotspot_id.
 #' @param out_dir the location where your list will export to. Defaults to current working directory.
 #' @param test_run TRUE if you don't want to immediately write a csv out, FALSE to write out csv. This argument is almost exclusively used for package testing.

@@ -7,7 +7,7 @@
 get_eblist(hotspot_id, out_name = hotspot_id, out_dir = getwd(), test_run = F)
 }
 \arguments{
-\item{hotspot_id}{the ID number given by eBird to a given hotspot or region}
+\item{hotspot_id}{the ID number given by eBird to a given hotspot or region. You can provide multiple region codes at once by passing a vector of strings, such as hotspot_id = c("L11704882", "US-CA-051").}
 
 \item{out_name}{the middle portion of the output filename. The filename will always be of the form "hotspot_species_out_name.csv", where "out_name" is replaced with whatever string is passed to the out_name argument. Defaults to the supplied hotspot_id.}
 
