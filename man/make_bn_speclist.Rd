@@ -18,25 +18,25 @@ make_bn_speclist(
 )
 }
 \arguments{
-\item{ebird_file}{The custom file you want to read in, must have COMMONNAME or SCINAME column}
+\item{ebird_file}{The custom species list file you want to read in. Must have a column that provides either the common name or scientific name of your birds of interest. Defaults to reading in a column called "COMMONNAME".}
 
 \item{bn_version}{The version of BirdNET you plan to use, "2.1", "2.2", "2.4"}
 
 \item{output_file}{The name of your output file, must end in ".txt"}
 
-\item{name_col}{Specify the name of your column that holds common names or choose SCINAME}
+\item{name_col}{Specify the name of your column that holds the common names of species. Can only specify this name_col value or the sci_col value, but not both.}
 
-\item{sci_col}{Specifiy the name of your column that holds scientific names or chose COMMONAME}
+\item{sci_col}{Specify the name of your column that holds scientific names of species. Can only specify this name_col value or the sci_col value, but not both.}
 
-\item{del_ebird_file}{Set to TRUE if you want to delete your source species list on completion}
+\item{del_ebird_file}{Set to TRUE if you want to delete your source species list on completion. Recommend keeping set to FALSE.}
 
-\item{ebird_dir}{The directory your ebird list is comiing from, defaults to current dir}
+\item{ebird_dir}{The directory your eBird list is coming from, defaults to your current working directory.}
 
-\item{out_dir}{The directory your BirdNET output will be written to, defaults to current dir}
+\item{out_dir}{The directory your BirdNET output will be written to, defaults to your current working directory.}
 
-\item{test_run}{Set to TRUE if you do not want an output file}
+\item{test_run}{Set to TRUE if you do not want an output file. Recommend setting to TRUE when loading in your custom list for the first time.}
 
-\item{add_species}{Supply a list of bird names that are missing from your custom list}
+\item{add_species}{Supply a list of bird names that are missing from your custom list. Can provide a single species like so, add_species = "Western Meadowlark", multiple species are added using add_species = c("Western Meadowlark", "Western Bluebird"), or by specifying a dataframe column. Additional species must match the column you provided to the function. If you provided an entry for name_col then provide common names, if you provided an entry for the sci_col then provide scientific names.}
 }
 \value{
 A table of birds that did not match the master BirdNET species list
@@ -48,6 +48,8 @@ Load a custom birdlist and convert it to BirdNET species list format
   # Create a temporary file
   file_path <- system.file("extdata", "input_birdlist.csv", package = "bntools")
   # Use the function to read the CSV
+  # For further manipulation of the list of species without matches
+  # please store the function output to a variable, as seen below in the example.
 missing_table <- make_bn_speclist(ebird_file = file_path,
 output = "birdnet_list.txt", name_col = "COMMONNAME", test_run = TRUE)
 

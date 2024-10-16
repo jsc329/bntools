@@ -9,11 +9,11 @@ get_eblist(hotspot_id, out_name = hotspot_id, out_dir = getwd(), test_run = F)
 \arguments{
 \item{hotspot_id}{the ID number given by eBird to a given hotspot or region}
 
-\item{out_name}{the middle portion of the output filename, see example}
+\item{out_name}{the middle portion of the output filename. The filename will always be of the form "hotspot_species_out_name.csv", where "out_name" is replaced with whatever string is passed to the out_name argument. Defaults to the supplied hotspot_id.}
 
-\item{out_dir}{the location where your list will export to. Defaults to current working directory}
+\item{out_dir}{the location where your list will export to. Defaults to current working directory.}
 
-\item{test_run}{TRUE if you don't want to immediately write a csv out, FALSE for write out csv}
+\item{test_run}{TRUE if you don't want to immediately write a csv out, FALSE to write out csv. This argument is almost exclusively used for package testing.}
 }
 \value{
 Nothing, only an exported CSV
@@ -25,7 +25,7 @@ Scrape eBird species from hotspot
 # Export the species list from Surprise Canyon, CA
 # URL for this hotspot is here: https://ebird.org/hotspot/L11704882
 # use the bit after the last /
-# I set test run here to be true so that a csv isn't written out
-# change this to F when you want to use this function
+# I set test run here to be TRUE so that a csv isn't written out
+# change this to FALSE when you want to use this function
 get_eblist("L11704882", test_run = TRUE)
 }
