@@ -105,7 +105,7 @@ get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd(), tes
 
     cat(paste0("There were ", nrow(hot_specs),
                " entries scraped from the eBird region(s) you specified.\n",
-               "You wrote hotspot_species_", hotspot_id, ".csv",
+               "You wrote hotspot_species_", out_name, ".csv",
                " to the ", getwd(), " directory."))
   }else{
 
