@@ -100,7 +100,7 @@ get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd(), tes
 
   utils::write.csv(hot_specs,
             paste0("hotspot_species_",
-                   hotspot_id,
+                   out_name,
                    ".csv"), row.names = F)
 
     cat(paste0("There were ", nrow(hot_specs),
