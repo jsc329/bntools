@@ -29,7 +29,8 @@ get_eblist <- function(hotspot_id, out_name = hotspot_id, out_dir = getwd(), tes
     # If so, just call it "combo"
     # to denote it's the aggregation of
     # three different hotspots
-    if (out_name == hotspot_id){
+    if (length(out_name) > 1){
+
       out_name <- "combo"
 
     }
